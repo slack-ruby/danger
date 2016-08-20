@@ -1,0 +1,10 @@
+AllCops:
+  Include:
+    - Dangerfile
+    - Rakefile
+
+Style/SignalException:
+  Exclude:
+    - 'Dangerfile'
+
+inherit_from: .rubocop_todo.yml
