@@ -29,8 +29,11 @@ Commit a `Dangerfile` with some placeholder text, eg. [slack-ruby-client's Dange
 Add Danger to `.travis.yml`, eg. [slack-ruby-client's Travis.yml](https://github.com/slack-ruby/slack-ruby-client/blob/master/.travis.yml).
 
 ```yaml
-before_script:
-  - bundle exec danger
+matrix:
+  include:
+    - rvm: 2.3.0
+      script:
+        - bundle exec danger
 ```
 
 #### Commit via a Pull Request
