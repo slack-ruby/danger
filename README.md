@@ -14,15 +14,20 @@ In Travis-CI, choose _Settings_ and add `DANGER_GITHUB_API_TOKEN` in _Environmen
 
 #### Add Danger
 
-Add `danger` to `Gemfile`.
+Add `danger` and `danger-changelog` to `Gemfile`.
 
 ```ruby
-gem 'danger', '~> 2.0'
+gem 'danger', '~> 3.1.1'
+gem 'danger-changelog', '~> 0.1'
 ```
 
 #### Add Dangerfile
 
-Commit a `Dangerfile` with some placeholder text, eg. [slack-ruby-client's Dangerfile](https://github.com/slack-ruby/slack-ruby-client/blob/master/Dangerfile). Danger automatically inherits the [Dangerfile](Dangerfile) in the organization's `danger` repo (this repo).
+Commit a `Dangerfile`, eg. [slack-ruby-client's Dangerfile](https://github.com/slack-ruby/slack-ruby-client/blob/master/Dangerfile), that inherits the [Dangerfile](Dangerfile) in the organization's `danger` repo (this repo).
+
+```ruby
+danger.import_dangerfile "slack-ruby/danger"
+```
 
 #### Add Danger to Travis-CI
 
@@ -31,7 +36,7 @@ Add Danger to `.travis.yml`, eg. [slack-ruby-client's Travis.yml](https://github
 ```yaml
 matrix:
   include:
-    - rvm: 2.3.0
+    - rvm: 2.3.1
       script:
         - bundle exec danger
 ```
