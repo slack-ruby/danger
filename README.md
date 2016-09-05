@@ -14,19 +14,18 @@ In Travis-CI, choose _Settings_ and add `DANGER_GITHUB_API_TOKEN` in _Environmen
 
 #### Add Danger
 
-Add `danger` and `danger-changelog` to `Gemfile`.
+Add `slack-ruby-danger` to `Gemfile`.
 
 ```ruby
-gem 'danger', '~> 3.1.1'
-gem 'danger-changelog', '~> 0.1'
+gem 'slack-ruby-danger', '~> 0.1.0'
 ```
 
 #### Add Dangerfile
 
-Commit a `Dangerfile`, eg. [slack-ruby-client's Dangerfile](https://github.com/slack-ruby/slack-ruby-client/blob/master/Dangerfile), that inherits the [Dangerfile](Dangerfile) in the organization's `danger` repo (this repo).
+Commit a `Dangerfile`, eg. [slack-ruby-client's Dangerfile](https://github.com/slack-ruby/slack-ruby-client/blob/master/Dangerfile).
 
 ```ruby
-danger.import_dangerfile "slack-ruby/danger"
+danger.import_dangerfile(gem: 'slack-ruby-danger')
 ```
 
 #### Add Danger to Travis-CI
@@ -43,7 +42,7 @@ matrix:
 
 #### Commit via a Pull Request
 
-To test things out, make a dummy entry in `CHANGELOG.md` that doesn't match the standard format and make a pull request. Iterate until green.
+To test things out make a pull request without CHANGELOG.md changes. Iterate until green.
 
 ## License
 
