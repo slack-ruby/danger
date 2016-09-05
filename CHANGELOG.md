@@ -1,5 +1,9 @@
 ### Changelog
 
+#### 0.1.1 (Next)
+
+* Your contribution here.
+
 #### 0.1.0 (9/5/2016)
 
 * [#3](https://github.com/slack-ruby/danger/pull/3): Turn this project into the slack-ruby-danger gem - [@dblock](https://github.com/dblock).
